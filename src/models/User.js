@@ -7,7 +7,7 @@ const UserSchema = new Mongoose.Schema(
     email: String,
     password: String,
     addresses: [
-      { //Model ya da class olarak olusturulup implement edilebilir.
+      { 
         title: String,
         adress1: String,
         adress2: String,
