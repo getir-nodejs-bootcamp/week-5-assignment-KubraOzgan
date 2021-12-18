@@ -49,7 +49,7 @@ const resetPassword = (req, res) => {
       if(!updatedUser) return res.status(hs.NOT_FOUND).send({message: "User not found"});
       eventEmitter.emit("send-email", {
         to: updatedUser.email, // list of receivers
-        subject: "Reset Password", // Subject line
+        subject: "Reset Password", // subject line
         html: `Your password has been reset according to your request. <br/>Don't forget to change your password after logging in! <br/>New password: <b>${new_password}<b>`,
       });
       res.status(hs.OK).send({message: "New password has been sent to your email. "})
