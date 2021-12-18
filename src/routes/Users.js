@@ -13,7 +13,7 @@ router.route("/login").post(validate(schemas.userLogin, "body"), login);
 
 //Admin
 router.route("/").get(authenticateAdmin, index);
-router.route("/").post(authenticateAdmin, validate(schemas.createUser, "body"), create); //middleware fonksiyonu source'a body'yi yolls, ona gore kontrol edecek
+router.route("/").post(authenticateAdmin, validate(schemas.createUser, "body"), create); 
 // router.route("/:typeId").post(validate(userQuery, "query"),validate(createUser, "body"), create);
 
 router.route("/reset-password").post(validate(schemas.resetPassword, "body"), resetPassword);
