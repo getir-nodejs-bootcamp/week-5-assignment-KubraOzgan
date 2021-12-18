@@ -12,10 +12,7 @@ events();
 
 const app = express();
 
-//Dinamik olarak eklenmis statik bir dosya oldugu icin dısari sunmaliyiz. 
-//localhost urlsinde uploads gelirse bu dosyayi disariya static olarak sun!!!
-//localhost:2018/product-images/dosyaAdi.uzanti
-app.use("/product-images", express.static(path.join(__dirname, "./", "uploads/products"))); //Bulundugumuz klasoru baz alarak
+app.use("/product-images", express.static(path.join(__dirname, "./", "uploads/products"))); 
 
 app.use(express.json());
 app.use(fileUpload());
