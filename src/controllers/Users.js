@@ -30,7 +30,7 @@ const login = (req, res) => {
   .then(user => {
     if(!user) return res.status(hs.NOT_FOUND).send({message: "User not found"});
     user = {
-      ...user.toObject(), //Mongoose modelinde ekleme cikarma yaparken once toObject diyerek kullaniciya gonderiyoruz.
+      ...user.toObject(), 
       tokens: {
         access_token: generateJWTAccessToken(user),
         refresh_token: generateJWTRefreshToken(user),
