@@ -9,7 +9,7 @@ const authenticateToken = (req, res, next) => {
     
     JWT.verify(token, process.env.ACCESS_TOKEN_SECRET_KEY, (err, user) => {
         if(err) return res.status(httpStatus.FORBIDDEN).send(err)
-        req.user = user; //reqin icine useri bind et, cunku kullanicinin bu usera ihtiyaci var.
+        req.user = user; 
         next();
     });
 };
