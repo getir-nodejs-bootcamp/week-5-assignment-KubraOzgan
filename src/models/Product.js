@@ -6,10 +6,9 @@ const ProductSchema = new Mongoose.Schema(
     description: String,
     quantity: Number,
     unit_price: Number,
-    category: [String], //Meyve,Elektoronik... / Model olusturup crud gerceklestikten sonra referansi verilebilir.
-    //user kismini controllers create EKLE!!!!
-    user_id: { //user => isAdmin? olanlarin tokeni musteriden farkli olsun
-      type: Mongoose.Types.ObjectId, //usera ait oldugunu soyledik
+    category: [String], 
+    user_id: { 
+      type: Mongoose.Types.ObjectId, 
       ref: "user"
     },
     media: String, //Birden fazla resim icin array tut
